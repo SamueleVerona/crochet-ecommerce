@@ -1,0 +1,28 @@
+html {
+  font-size: 62.5%;
+
+  @include screen(mid-land) {
+    font-size: 58%;
+  }
+
+  @include screen(mid-port) {
+    font-size: 50%;
+  }
+
+  @include screen(small) {
+    font-size: 40%;
+  }
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  background: rgb(71, 71, 109);
+}

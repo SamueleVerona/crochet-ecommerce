@@ -1,0 +1,59 @@
+.navbar {
+  position: sticky;
+  top: 5rem;
+  // left: 50%;
+  transform: translate(-50%, -100%);
+  border: solid;
+  width: max-content;
+  z-index: 200;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin: 0rem 50%;
+
+  border-radius: 5px;
+  border: solid 2px $theme-primary-white-dark;
+  backdrop-filter: blur(100px);
+
+  @include screen(mid-port) {
+    top: 6rem;
+  }
+
+  @include screen(small) {
+    transform: translate(-50%, -150%);
+    top: 9rem;
+    left: 50%;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+
+    &-item {
+      font-family: "Qurova";
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0rem 1rem;
+      a {
+        color: $theme-primary-wine;
+        text-decoration: none;
+        &:active,
+        &:hover,
+        &:focus {
+          color: $theme-primary-pink;
+          border: none;
+          outline: none;
+        }
+
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+      @include screen(mid-port) {
+        font-size: 3rem;
+      }
+      @include screen(small) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

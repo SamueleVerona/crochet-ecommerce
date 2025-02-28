@@ -1,0 +1,12 @@
+.footer {
+  background-blend-mode: darken;
+  color: $theme-primary-white;
+  font-size: 1.8rem;
+  font-family: "Qurova";
+  display: flex;
+  min-height: 20vh;
+
+  @media screen and (max-width: 850px) {
+    flex-direction: column;
+  }
+}

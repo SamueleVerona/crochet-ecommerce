@@ -6,5 +6,22 @@
 @import "base/base";
 @import "base/typography";
 @import "base/utilities";
+@import "base/fonts";
 
-@import "layout/header";
+@import "components/logo";
+@import "components/btn";
+@import "components/gallery";
+@import "components/products";
+@import "components/reviews";
+@import "components/form";
+@import "components/contacts";
+@import "components/visit";
+
+@import "components/icon";
+@import "components/info";
+@import "components/copy";
+
+@import "layout/navigation";
+@import "layout/footer";
+
+@import "pages/homepage";

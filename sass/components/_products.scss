@@ -1,0 +1,177 @@
+.products {
+  position: relative;
+  z-index: 150;
+  list-style: none;
+  margin: 0 auto;
+
+  @include screen(mid-land) {
+    width: 85%;
+  }
+
+  .products__product {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    min-height: 40rem;
+    overflow: hidden;
+
+    font-family: "Qurova";
+    color: $theme-primary-wine;
+    background: $theme-primary-white-dark;
+    background-image: url(/img/nnnoise.svg),
+      linear-gradient(
+        to right,
+        rgb(255, 255, 255) 50%,
+        rgba(255, 204, 2, 0.442) 80%
+      );
+    background-blend-mode: multiply;
+    background-repeat: repeat;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0rem 1rem 6rem rgba(0, 0, 0, 0.304);
+
+    @include screen(large-std) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include screen(mid-land) {
+      grid-template-columns: min-content;
+      background-image: url(/img/nnnoise.svg),
+        linear-gradient(
+          to bottom,
+          rgb(255, 255, 255) 50%,
+          rgba(255, 204, 2, 0.442) 80%
+        );
+    }
+
+    &-img {
+      display: flex;
+      justify-content: center;
+      height: 90%;
+      flex: 1 1 10rem;
+      margin-left: 2rem;
+
+      img {
+        width: 100%;
+        max-width: 65rem;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @include screen(large-std) {
+        margin-left: 0;
+      }
+
+      @include screen(mid-land) {
+        img {
+          width: 80%;
+        }
+      }
+    }
+    &-info {
+      flex: 0.8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem 3rem;
+
+      & > :not(:nth-child(1), :nth-child(2)) {
+        margin: 0.5rem 0rem;
+      }
+      &-name {
+        grid-column: info-start/info-end;
+        margin-top: 3rem;
+        font-size: 6rem;
+        color: $theme-primary-wine;
+        text-wrap: nowrap;
+        order: -5;
+
+        @media screen and (max-width: 850px) {
+          margin-top: 0;
+        }
+      }
+      &-texture {
+        margin-bottom: 5rem;
+        font-size: 4rem;
+        color: $theme-primary-green;
+        border-bottom: solid 2px $theme-primary-pink;
+
+        @media screen and (max-width: 850px) {
+          margin-bottom: 2rem;
+        }
+      }
+      &-size {
+        font-size: 2rem;
+        span {
+          color: $theme-primary-orange;
+        }
+      }
+      &-qty {
+        font-size: 2rem;
+        span {
+          color: $theme-primary-cyan;
+        }
+      }
+      &-color {
+        grid-column: info-start/info-end;
+        font-size: 2rem;
+      }
+
+      @include screen(mid-land) {
+        padding: 0rem 3rem;
+      }
+    }
+
+    &-buy {
+      flex: 0.5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 2rem;
+
+      @include screen(large-std) {
+        flex: 1;
+        flex-direction: row-reverse;
+        grid-column: 1/-1;
+        align-items: center;
+        &-cta {
+          margin-right: 2rem;
+        }
+      }
+
+      @include screen(mid-land) {
+        flex: 1;
+        flex-direction: column;
+        grid-column: 1/-1;
+        align-items: center;
+      }
+
+      &-price {
+        font-size: 7rem;
+        color: $theme-primary-cyan-bright;
+
+        align-items: baseline;
+        & span {
+          font-size: 10rem;
+          font-weight: 300;
+          display: inline-block;
+          transform: rotateY(180deg);
+        }
+
+        @include screen(mid-land) {
+          grid-row-start: 6;
+        }
+      }
+
+      &-cta {
+        font-family: inherit;
+
+        @include screen(mid-land) {
+          grid-row-start: 6;
+        }
+      }
+    }
+  }
+}

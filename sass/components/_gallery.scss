@@ -1,0 +1,186 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-rows: repeat(5, 10rem);
+  grid-template-areas:
+    "img4 img1 img1 text1  text1"
+    "img4 img1 img1  text1  text1"
+    "img4 img5  text3 img3 img2"
+    "img4 img5 text3 img3  img2"
+    "text2 text2 img6 img6 img2";
+
+  gap: 0.8rem;
+  list-style: none;
+  transition: all 0.2s ease;
+  position: relative;
+  grid-auto-flow: row dense;
+
+  @include screen(large-std) {
+    grid-template-areas:
+      "img1 img1 text1 text1"
+      "img1 img1 text1 text1"
+      "img4 img5 text3 img3"
+      "img4 img5 text3 img2"
+      "text2 img6 img6 img2";
+  }
+
+  @include screen(mid-land) {
+    grid-template-areas:
+      "img1 text1 text1"
+      "img1 img5 img5"
+      "img1 text3 img3"
+      "img4 text3 img2"
+      "text2 img6 img2";
+  }
+
+  @include screen(mid-port) {
+    grid-auto-rows: 10rem;
+    grid-template-areas:
+      "text1 text1"
+      "img1 img5"
+      "img1 text3"
+      "img4 text3"
+      "text2 img2"
+      "img3 img2"
+      "img6 img6";
+  }
+
+  @include screen(small) {
+    grid-template-rows: repeat(6, 15rem);
+
+    grid-template-areas:
+      "text1"
+      "img1 "
+      "text2"
+      "img3"
+      "text3 "
+      "img5 ";
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    &-caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+
+      opacity: 0;
+      font-size: 3rem;
+      color: $theme-primary-white;
+      text-align: center;
+      transition: all 0.5s ease;
+    }
+
+    &--1 {
+      display: flex;
+      grid-area: text1;
+      justify-content: end;
+      align-items: center;
+      font-size: 4rem;
+      color: $theme-primary-pink;
+      text-wrap-mode: nowrap;
+
+      @include screen(small) {
+        justify-content: center;
+      }
+    }
+    &--2 {
+      grid-area: text2;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      padding: 1rem;
+      box-sizing: border-box;
+
+      font-size: 3rem;
+      color: $theme-primary-green;
+
+      @include screen(small) {
+        justify-content: center;
+      }
+    }
+    &--3 {
+      display: flex;
+      grid-area: text3;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      hyphens: auto;
+      line-clamp: 3;
+      justify-content: center;
+      align-items: center;
+      color: $theme-primary-wine;
+      background-image: url(/img/ssscales.svg),
+        linear-gradient(rgb(255, 255, 255, 0.4), rgba(255, 255, 255, 0.442));
+      background-repeat: no-repeat;
+      background-size: 200%;
+      background-blend-mode: color;
+
+      p {
+        padding: 2rem;
+      }
+
+      @include screen(small) {
+        background: none;
+      }
+    }
+    &--4 {
+      grid-area: img1;
+    }
+    &--5 {
+      grid-area: img2;
+      transform-origin: left;
+    }
+    &--6 {
+      grid-area: img3;
+    }
+    &--7 {
+      grid-area: img4;
+    }
+    &--8 {
+      grid-area: img5;
+    }
+    &--9 {
+      grid-area: img6;
+    }
+
+    &:not(&--1, &--2, &--3):hover {
+      margin-right: 10rem;
+
+      .gallery__item-caption {
+        opacity: 1;
+        backdrop-filter: brightness(80%);
+      }
+    }
+
+    @include screen(small) {
+      overflow: hidden;
+      &--5,
+      &--7,
+      &--9 {
+        display: none;
+      }
+    }
+  }
+}

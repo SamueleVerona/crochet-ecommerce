@@ -1,1 +1,33 @@
+@mixin screen($breakpoint) {
+  @if $breakpoint == large-std {
+    @media screen and (max-width: 1024px) {
+      @content;
+    }
+  }
 
+  @if $breakpoint == mid-land {
+    @media screen and (max-width: 850px) {
+      @content;
+    }
+  }
+  @if $breakpoint == mid-port {
+    @media screen and (max-width: 650px) {
+      @content;
+    }
+  }
+  @if $breakpoint == small {
+    @media screen and (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint == smaller {
+    @media screen and (max-width: 500px) {
+      @content;
+    }
+  }
+  @if $breakpoint == smallest {
+    @media screen and (max-width: 400px) {
+      @content;
+    }
+  }
+}
