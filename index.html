@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crochet | handmade garments</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
     <section class="section-hero">
-      <video autoplay loop>
+      <video autoplay muted loop inert>
         <source src="/img/crochet.mp4" type="video/mp4" />
       </video>
       <div class="section-hero__title">
@@ -97,15 +98,19 @@
         <h1 class="heading-primary--section">Shop</h1>
         <div class="section-shop__container">
           <ul class="products">
-            <li class="products__product">
+            <li class="products__product products__product--1">
               <div class="products__product-img">
                 <img src="/img/beanie-yellow-no-bkg.png" alt="beanie" />
               </div>
               <div class="products__product-info">
-                <h2 class="products__product-info-name">Classic Beanie</h2>
-                <h3 class="products__product-info-texture">Cross stitch</h3>
+                <h2 class="products__product-info-name pd-name-color-1">
+                  Classic Beanie
+                </h2>
+                <h3 class="products__product-info-texture pd-stitch-color-1">
+                  Cross stitch
+                </h3>
                 <h4 class="products__product-info-size">
-                  Size: <span>All</span>
+                  Size: <span class="pd-size-color-1">All</span>
                 </h4>
                 <h4 class="products__product-info-qty">
                   Quantity: <span> IO</span>
@@ -115,7 +120,65 @@
                 </h4>
               </div>
               <div class="products__product-buy">
-                <h2 class="products__product-buy-price"><span>oε</span>$</h2>
+                <h2 class="products__product-buy-price pd-price-color-1">
+                  <span>oε</span>$
+                </h2>
+                <button class="products__product-buy-cta btn">BUY</button>
+              </div>
+            </li>
+            <li class="products__product products__product--2">
+              <div class="products__product-img">
+                <img src="/img/scarf-large.png" alt="scarf" />
+              </div>
+              <div class="products__product-info">
+                <h2 class="products__product-info-name pd-name-color-2">
+                  Scarf
+                </h2>
+                <h3 class="products__product-info-texture pd-stitch-color-2">
+                  Dovetail stitch
+                </h3>
+                <h4 class="products__product-info-size">
+                  Size: <span class="pd-size-color-2">All</span>
+                </h4>
+                <h4 class="products__product-info-qty">
+                  Quantity: <span> IO</span>
+                </h4>
+                <h4 class="products__product-info-color">
+                  Colors: White-Pink, White-Mustard, White-Red, Mono
+                </h4>
+              </div>
+              <div class="products__product-buy">
+                <h2 class="products__product-buy-price pd-price-color-3">
+                  <span>Os</span>$
+                </h2>
+                <button class="products__product-buy-cta btn">BUY</button>
+              </div>
+            </li>
+            <li class="products__product products__product--3">
+              <div class="products__product-img">
+                <img src="/img/sweater-large.png" alt="scarf" />
+              </div>
+              <div class="products__product-info">
+                <h2 class="products__product-info-name pd-name-color-2">
+                  Turtleneck Sweater
+                </h2>
+                <h3 class="products__product-info-texture pd-stitch-color-2">
+                  Dovetail stitch
+                </h3>
+                <h4 class="products__product-info-size">
+                  Size: <span class="pd-size-color-2">All</span>
+                </h4>
+                <h4 class="products__product-info-qty">
+                  Quantity: <span> IO</span>
+                </h4>
+                <h4 class="products__product-info-color">
+                  Colors: White-Pink, White-Mustard, White-Red, Mono
+                </h4>
+              </div>
+              <div class="products__product-buy">
+                <h2 class="products__product-buy-price pd-price-color-2">
+                  <span>OOI</span>$
+                </h2>
                 <button class="products__product-buy-cta btn">BUY</button>
               </div>
             </li>
@@ -258,6 +321,13 @@
           </div>
         </div>
       </section>
+      <div class="basket">
+        <button class="basket__btn">
+          <svg class="basket__btn-icon">
+            <use xlink:href="img/sprite.svg#icon-basket" class="icon"></use>
+          </svg>
+        </button>
+      </div>
     </main>
     <footer class="footer">
       <div class="info">

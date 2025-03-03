@@ -1,0 +1,28 @@
+.store-item {
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+
+  border-radius: 60px;
+  //   background-color: rgb(255, 17, 17);
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.732),
+      rgba(255, 255, 255, 0.549)
+    ),
+    url(/img/beanie-yellow-no-bkg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  color: black;
+  //   border: solid;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: arial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.237);
+  animation: basket-add 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}

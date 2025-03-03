@@ -20,29 +20,90 @@
     font-family: "Qurova";
     color: $theme-primary-wine;
     background: $theme-primary-white-dark;
-    background-image: url(/img/nnnoise.svg),
-      linear-gradient(
-        to right,
-        rgb(255, 255, 255) 50%,
-        rgba(255, 204, 2, 0.442) 80%
-      );
+
     background-blend-mode: multiply;
     background-repeat: repeat;
     border: none;
     border-radius: 40px;
     box-shadow: 0rem 1rem 6rem rgba(0, 0, 0, 0.304);
 
-    @include screen(large-std) {
-      grid-template-columns: repeat(2, 1fr);
+    &:not(:last-of-type) {
+      margin-bottom: 1rem;
     }
-    @include screen(mid-land) {
-      grid-template-columns: min-content;
+
+    &--1 {
       background-image: url(/img/nnnoise.svg),
         linear-gradient(
-          to bottom,
+          to right,
           rgb(255, 255, 255) 50%,
           rgba(255, 204, 2, 0.442) 80%
         );
+
+      @include screen(mid-land) {
+        background-image: url(/img/nnnoise.svg),
+          linear-gradient(
+            to bottom,
+            rgb(255, 255, 255) 50%,
+            rgba(255, 204, 2, 0.442) 80%
+          );
+      }
+    }
+    &--2 {
+      background-image: url(/img/oooscillate.svg),
+        linear-gradient(
+          to right,
+          rgb(255, 255, 255) 50%,
+          rgba(253, 231, 231, 0.825) 80%
+        );
+
+      background-position: 40% 20%;
+      background-attachment: fixed;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @include screen(mid-land) {
+        background-image: url(/img/oooscillate.svg),
+          linear-gradient(
+            to bottom,
+            rgb(255, 255, 255) 50%,
+            rgba(253, 231, 231, 0.825) 80%
+          );
+      }
+    }
+    &--3 {
+      background-image: url(/img/rrreplicate.svg),
+        linear-gradient(
+          to right,
+          rgb(255, 255, 255) 50%,
+          rgba(244, 246, 255, 0) 80%
+        );
+
+      // background-position: center;
+
+      @include screen(mid-land) {
+        background-image: url(/img/rrreplicate.svg),
+          linear-gradient(
+            to bottom,
+            rgb(255, 255, 255) 50%,
+            rgba(255, 255, 255, 0.966) 80%
+          );
+
+        background-repeat: no-repeat;
+        background-size: 300%;
+      }
+    }
+
+    @include screen(large-std) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include screen(mid-land) {
+      grid-template-columns: min-content;
+    }
+
+    @include screen(mid-port) {
+      grid-template-columns: 1fr;
     }
 
     &-img {
@@ -83,7 +144,6 @@
         grid-column: info-start/info-end;
         margin-top: 3rem;
         font-size: 6rem;
-        color: $theme-primary-wine;
         text-wrap: nowrap;
         order: -5;
 
@@ -94,7 +154,6 @@
       &-texture {
         margin-bottom: 5rem;
         font-size: 4rem;
-        color: $theme-primary-green;
         border-bottom: solid 2px $theme-primary-pink;
 
         @media screen and (max-width: 850px) {
@@ -103,9 +162,6 @@
       }
       &-size {
         font-size: 2rem;
-        span {
-          color: $theme-primary-orange;
-        }
       }
       &-qty {
         font-size: 2rem;
@@ -122,7 +178,6 @@
         padding: 0rem 3rem;
       }
     }
-
     &-buy {
       flex: 0.5;
       display: flex;
@@ -150,7 +205,6 @@
 
       &-price {
         font-size: 7rem;
-        color: $theme-primary-cyan-bright;
 
         align-items: baseline;
         & span {
@@ -166,7 +220,16 @@
       }
 
       &-cta {
+        position: relative;
         font-family: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.1s ease;
+
+        &:active {
+          scale: 0.9;
+        }
 
         @include screen(mid-land) {
           grid-row-start: 6;
