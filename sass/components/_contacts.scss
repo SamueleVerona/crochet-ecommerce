@@ -1,7 +1,7 @@
 .contacts {
   font-family: "Qurova";
   list-style: none;
-  flex: 0.5;
+  flex: 1;
   margin-left: 2rem;
 
   align-self: center;
@@ -18,11 +18,11 @@
     "icon3 soc3 soc3";
   grid-auto-flow: row dense;
   align-content: center;
-
   gap: 0.3rem;
 
   @include screen(mid-land) {
     width: 90%;
+    margin-left: 0rem;
     margin-top: 2rem;
   }
 
@@ -40,9 +40,9 @@
 
     &:has([class*="link"]) {
       cursor: pointer;
+      border-color: $theme-primary-cyan;
 
       &:hover {
-        color: $theme-insta;
         border-color: $theme-primary-cyan-bright;
       }
     }

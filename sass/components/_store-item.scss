@@ -2,9 +2,9 @@
   width: 8rem;
   height: 8rem;
   position: absolute;
+  bottom: 300%;
 
   border-radius: 60px;
-  //   background-color: rgb(255, 17, 17);
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.732),
       rgba(255, 255, 255, 0.549)
@@ -15,7 +15,6 @@
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   color: black;
-  //   border: solid;
   font-size: 2rem;
   font-weight: 600;
   font-family: arial;
@@ -24,5 +23,31 @@
   justify-content: center;
   z-index: 100;
   box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.237);
-  animation: basket-add 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+
+  will-change: rotate, opacity, scale;
+  // transform-origin: center;
+  // transform: translateY(0%) scale(1);
+  // rotate: x 0deg;
+  transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1),
+    opacity 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  opacity: 0;
+  // visibility: hidden;
+  rotate: x 0deg;
+  scale: 0.9;
+
+  &--animation {
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    opacity: 1;
+    // visibility: visible;
+    rotate: x 360deg;
+    bottom: -1%;
+    scale: 1;
+
+    // animation: basket-add 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+}
+.reset {
+  opacity: 0;
 }

@@ -15,6 +15,7 @@ main {
 
   background: #ab858a;
   font-family: "Qurova";
+  overflow: hidden;
 
   video {
     position: absolute;
@@ -25,128 +26,192 @@ main {
     z-index: 0;
     mix-blend-mode: multiply;
   }
+
+  &__title {
+    width: 70vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    position: absolute;
+    left: 50%;
+    top: 2%;
+    transform: translateX(-50%);
+    // border: solid;
+
+    @include screen(small) {
+      top: 5%;
+    }
+    @include screen(smaller) {
+      top: 7%;
+      width: 65vw;
+      height: 34vh;
+    }
+
+    @include screen(smallest) {
+      top: 20%;
+      width: 60vw;
+      height: 30vh;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: black;
+      display: flex;
+      margin: auto;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: visible;
+
+      text {
+        font-size: 20rem;
+        font-weight: 600;
+        fill: white;
+        stroke-width: 0;
+        transform: translate(-12%, 95%);
+        letter-spacing: 2rem;
+
+        @include screen(small) {
+          font-size: 20rem;
+        }
+        @include screen(smallest) {
+          transform: translate(-5%, 95%);
+
+          font-size: 20rem;
+        }
+        @include screen(land-large-big) {
+          font-size: 20rem;
+        }
+
+        @include screen(land-mid-port) {
+          font-size: 15rem;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    text-align: center;
+    width: 60vh;
+
+    @include screen(small) {
+      width: 55vh;
+    }
+    // @include screen(land-mid-port) {
+    //   width: 30vh;
+    // }
+
+    img {
+      width: 50%;
+    }
+  }
 }
 
 .section-statement {
   background-color: $theme-primary-white-dark;
   position: relative;
   font-family: "Qurova";
-  border-radius: 5vh;
+  border-radius: 60px;
+  z-index: 2;
+  max-height: 100vh;
+  overflow: hidden;
   transform: translateY(-100px);
-  z-index: 100;
+
+  @include screen(mid-port) {
+    max-height: max-content;
+  }
+
+  @include screen(land-mid-land) {
+    max-height: max-content;
+  }
 
   &__container {
     padding: 7rem 5rem 5rem 5rem;
     overflow: hidden;
+    height: 100%;
 
     @include screen(small) {
-      padding: 7rem 5rem 5rem 5rem;
+      padding: 5rem;
+    }
+
+    @include screen(smallest) {
+      padding: 7rem 2rem 5rem 2rem;
     }
   }
 }
 .section-shop {
-  z-index: 0;
-  transform: translateY(-250px);
   background-color: $theme-primary-pink-light;
   align-items: center;
+  transform: translateY(-50px);
 
   h1 {
-    transform: translateY(200px);
     align-self: start;
     margin-left: 5rem;
   }
 
   &__container {
-    transform: translateY(200px);
     padding: 2rem;
     margin: auto;
   }
 }
 
 .section-reviews {
+  transform: translateY(-50px);
+  height: 100vh;
+
   position: relative;
   margin-top: 3rem;
   padding: 0rem 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: min-content min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  @media screen and (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, max-content);
+  @include screen(mid-land) {
+    height: auto;
   }
 
   &__heading {
     text-align: right;
     margin-right: $section-title-margin;
-    height: max-content;
-    grid-column-start: 2;
-    grid-row-start: 1;
-    margin-bottom: 2rem;
+    width: 100%;
   }
   &__container {
-    grid-row-start: 2;
-
-    border-radius: 60px;
-
-    background: $theme-primary-white;
-    z-index: 2;
-    box-shadow: 0rem 1rem 3rem rgba(0, 0, 0, 0.125);
-
-    background-image: linear-gradient(
-        rgba(0, 255, 94, 0.13),
-        rgba(0, 255, 94, 0.13)
-      ),
-      url("/img/ssspiral-2.svg");
-    background-blend-mode: difference;
-    background-size: cover;
-
-    @media screen and (max-width: 1024px) {
-      grid-column: span 3;
-    }
-  }
-
-  &__form {
-    position: relative;
-    grid-column-start: -2;
-    grid-row: 2 / span 2;
-    align-self: flex-start;
-    // justify-self: center;
     display: flex;
-    flex-direction: column;
-    height: max-content;
+    width: 100%;
+    height: 100%;
 
-    border: solid 3px $theme-primary-wine;
-    border-radius: 5px;
-    margin-left: 2rem;
-    margin-bottom: 2rem;
-
-    h3 {
-      margin: 2rem 0rem 0rem 2rem;
-      color: $theme-primary-wine;
+    @include screen(mid-land) {
+      flex-direction: column;
+      height: auto;
     }
 
-    @media screen and (max-width: 1024px) {
-      margin: 0;
-      margin-top: 2rem;
-
-      grid-row-start: 3;
-      grid-column: span 2;
+    @include screen(large-std) {
+    }
+    @include screen(land-mid-port) {
     }
   }
 }
 
 .section-contacts {
-  margin-top: 5rem;
-  background-image: url(/img/bbblurry.svg);
-  background: url(/img/bbblurry.svg);
+  background-image: linear-gradient(
+      to top,
+      rgba($theme-primary-pink, 0.5),
+      rgba($theme-primary-pink, 0)
+    ),
+    url(/img/bbblurry-2.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+
+  background-blend-mode: color;
   border-bottom-left-radius: 60px;
   border-bottom-right-radius: 60px;
 
   position: relative;
-  z-index: 100;
+  z-index: 2;
 
   h1 {
     margin-left: $section-title-margin;
@@ -157,10 +222,29 @@ main {
     justify-content: center;
     align-items: center;
     padding: 3rem;
+    padding-bottom: 4rem;
 
     @include screen(mid-land) {
       align-items: center;
       flex-direction: column;
     }
+
+    @include screen(only-land) {
+      flex-direction: row;
+      padding: 0rem 3rem 2rem 3rem;
+    }
+  }
+
+  @include screen(mid-land) {
+    background-image: linear-gradient(
+        to top,
+        rgba($theme-primary-pink, 0.5),
+        rgba($theme-primary-pink, 0)
+      ),
+      url(/img/bbblurry-v.svg);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }

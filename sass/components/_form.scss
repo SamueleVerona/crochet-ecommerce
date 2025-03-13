@@ -1,12 +1,33 @@
 .form {
   position: relative;
-  display: flex;
+  display: inline-flex;
+  // align-self: flex-start;
+  flex: 1;
+  height: 100%;
+
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 2rem;
   font-family: "Qurova";
   color: $theme-primary-white;
-  z-index: 100;
+  border: solid 3px $theme-primary-wine;
+  border-radius: 5px;
+  margin-left: 1rem;
+
+  &__heading {
+    margin-bottom: 1rem;
+    color: $theme-primary-green;
+    width: 100%;
+
+    @include screen(large-std) {
+      font-size: 5rem;
+    }
+  }
+
+  &__textarea-label {
+    width: 100%;
+  }
 
   label {
     display: flex;
@@ -35,7 +56,6 @@
     align-self: center;
 
     label {
-      // margin-right: 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -87,8 +107,20 @@
     font-family: inherit;
 
     &:hover,
-    &:focus {
+    &:active {
       background-color: lighten($theme-primary-wine, 20%);
     }
+  }
+
+  @include screen(mid-land) {
+    height: auto;
+
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+  }
+
+  @include screen(land-mid-port) {
+    grid-column-start: 2;
+    grid-row: 2;
   }
 }

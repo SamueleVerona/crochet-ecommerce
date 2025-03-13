@@ -1,38 +1,40 @@
 .basket {
-  position: sticky;
-  bottom: 0rem;
+  position: absolute;
+  right: 0rem;
 
-  display: flex;
-  justify-content: end;
-  z-index: 100;
   overflow: visible;
-  height: 0rem;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 100;
 
   &__btn {
+    position: fixed;
+    bottom: 2rem;
+
     margin-right: 2rem;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
     height: 8rem;
     width: 8rem;
     border-radius: 100%;
     background: none;
-    transform: translate(0px, -120%);
+    // transform: translate(0px, -120%);
     border: none;
     background: rgba(255, 255, 255, 0.632);
     backdrop-filter: blur(10px);
     cursor: pointer;
     box-shadow: 0.2rem 0.5rem 2rem rgba(0, 0, 0, 0.234);
     transition: all 0.2s ease;
+    overflow: visible;
 
     &:hover {
       box-shadow: 0.1rem 0.3rem 1.5rem rgba(0, 0, 0, 0.234);
       scale: 0.95;
     }
 
-    &::after {
-      content: "+1";
+    &-idx {
       position: absolute;
       top: 0;
       right: 0;

@@ -1,5 +1,7 @@
 html {
   font-size: 62.5%;
+  scroll-snap-type: mandatory;
+  scroll-snap-align: start;
 
   @include screen(mid-land) {
     font-size: 58%;
@@ -23,6 +25,8 @@ html {
 }
 
 body {
+  position: relative;
   box-sizing: border-box;
   background: rgb(71, 71, 109);
+  overflow-x: hidden;
 }

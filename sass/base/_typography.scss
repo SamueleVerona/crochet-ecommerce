@@ -19,18 +19,37 @@
 
 .heading-secondary {
   margin-top: 2rem;
-  font-size: 4rem;
+  font-size: 5vh;
   color: $theme-primary-white;
   letter-spacing: 0.5rem;
   position: relative;
+
+  @include screen(mid-land) {
+    font-size: 4vh;
+  }
   @include screen(small) {
-    font-size: 3rem;
+    font-size: 3.5vh;
+  }
+  @include screen(smaller) {
+    font-size: 3.5vh;
+  }
+  @include screen(smallest) {
+    font-size: 3vh;
   }
 }
 .heading-tertiary {
   font-family: "Romantic";
-  font-size: 5rem;
+  font-size: 6rem;
   color: $theme-primary-black;
+}
+
+.heading-quaternary {
+  font-size: 2.5rem;
+  color: $theme-primary-black;
+
+  @include screen(small) {
+    font-size: 3rem;
+  }
 }
 
 .page-link {
@@ -94,5 +113,5 @@
   color: $theme-primary-blue;
 }
 .pd-price-color-3 {
-  color: $theme-primary-brown;
+  color: $theme-primary-burgundy;
 }

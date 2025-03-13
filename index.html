@@ -8,15 +8,120 @@
     <script defer src="script.js"></script>
   </head>
   <body>
+    <div class="checkout">
+      <div class="checkout__container">
+        <div class="checkout__basket">
+          <h2 class="checkout__basket-heading--secondary heading-secondary">
+            In your basket
+          </h2>
+          <ul class="products checkout__basket-list">
+            <li class="products__product products__product--1">
+              <div class="products__product-img">
+                <img
+                  src="/img/compressed/beanie-must-small.webp"
+                  alt="beanie"
+                />
+              </div>
+              <div class="products__product-info">
+                <h2><span>1</span> X</h2>
+              </div>
+            </li>
+            <li class="products__product products__product--2">
+              <div class="products__product-img">
+                <img src="/img/compressed/scarf-white-small.webp" alt="scarf" />
+              </div>
+              <div class="products__product-info">
+                <h2><span>1</span> X</h2>
+              </div>
+            </li>
+            <li class="products__product products__product--3">
+              <div class="products__product-img">
+                <img
+                  src="/img/compressed/sweater-blue-small.webp"
+                  alt="sweater"
+                />
+              </div>
+              <div class="products__product-info">
+                <h2><span>1</span> X</h2>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="checkout__invoice">
+          <h2 class="heading-secondary checkout__invoice-heading--secondary">
+            CHECKOUT
+          </h2>
+          <div class="checkout__invoice-summary">
+            <h3 class="checkout__invoice-id">
+              Order id: <span>#cOgIgH@d_Fgv</span>
+            </h3>
+            <h3 class="checkout__invoice-heading--tertiary">Items:</h3>
+            <ul class="checkout__invoice-products">
+              <li>Classic Beanie, M Mustard, <span>(1x) 30$</span></li>
+              <li>Scarf, L White, <span>(1x) 60$</span></li>
+              <li>Sweater, S Violet, <span>(1x) 100$</span></li>
+            </ul>
+            <ul class="checkout__invoice-price">
+              <li>Delivery: <span>5$</span></li>
+              <li>Total (VAT incl.):</li>
+            </ul>
+          </div>
+          <div class="checkout__invoice-payment">
+            <h2 class="checkout__invoice-total">155$</h2>
+            <h4 class="checkout__invoice-heading--quaternary">
+              You can pay with:
+            </h4>
+            <form action="" method="dialog" class="form">
+              <div class="form__options">
+                <input type="radio" id="paypal" name="pay-method" />
+                <label for="paypal">PayPal <span></span> </label>
+
+                <input type="radio" id="card" name="pay-method" />
+                <label for="card">Card <span></span></label>
+
+                <input type="radio" id="appleplay" name="pay-method" />
+                <label for="appleplay">Apple Pay <span></span></label>
+              </div>
+
+              <button class="btn checkout__invoice-cta">buy</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="checkout__bkg"></div>
+    </div>
+    <div class="basket">
+      <button class="basket__btn">
+        <svg class="basket__btn-icon">
+          <use xlink:href="img/sprite.svg#icon-basket" class="icon"></use>
+        </svg>
+        <span class="basket__btn-idx"></span>
+        <div class="store-item" inert></div>
+      </button>
+    </div>
     <section class="section-hero">
       <video autoplay muted loop inert>
         <source src="/img/crochet.mp4" type="video/mp4" />
       </video>
       <div class="section-hero__title">
-        <h1 class="heading-primary">CROCHET</h1>
+        <svg viewBox="0 0 300 550" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <path
+              stroke="black"
+              fill="none"
+              d="M-250,200 A350,350 0 0,1 600,210"
+              id="arc"
+            ></path>
+          </defs>
+
+          <text dy="-100" text-anchor="middle">
+            <textPath startOffset="50%" href="#arc">CROCHET</textPath>
+          </text>
+        </svg>
       </div>
       <div class="section-hero__logo">
-        <img src="img/logo-single-red.png" alt="site logo" />
+        <img src="img/logo-red-short.png" alt="site logo" />
       </div>
       <div class="section-hero__subtitle">
         <h2 class="heading-secondary">HANDMANDE GARMENTS</h2>
@@ -25,13 +130,21 @@
     <main>
       <nav class="navbar">
         <ul class="navbar__list">
-          <li class="navbar__list-item"><a href="#statement">statement</a></li>
-          <li class="navbar__list-item"><a href="#shop">shop</a></li>
-          <li class="navbar__list-item"><a href="#reviews">reviews</a></li>
-          <li class="navbar__list-item"><a href="#contacts">contacts</a></li>
+          <li class="navbar__list-item">
+            <a href="#statement" class="link link--1">statement</a>
+          </li>
+          <li class="navbar__list-item">
+            <a href="#shop" class="link link--2">shop</a>
+          </li>
+          <li class="navbar__list-item">
+            <a href="#reviews" class="link link--3">reviews</a>
+          </li>
+          <li class="navbar__list-item">
+            <a href="#contacts" class="link link--4">contacts</a>
+          </li>
         </ul>
       </nav>
-      <section class="section-statement" id="statement">
+      <section class="section-statement section--1" id="statement">
         <div class="section-statement__container">
           <ul class="gallery">
             <li class="gallery__item gallery__item--1">
@@ -48,45 +161,83 @@
             </li>
             <li class="gallery__item gallery__item--4">
               <img
-                src="img/gallery-1-small.jpg"
-                alt=""
+                srcset="
+                  img/compressed/gallery-1-small.webp  640w,
+                  img/compressed/gallery-1-large.webp 2400w
+                "
+                sizes="(max-width:64em) 62.5vw 
+                        (max-width:37.5em)  86vw"
+                alt="sheep herd"
+                src="img/compressed/gallery-1-large.webp"
                 class="gallery__item-img"
               />
             </li>
             <li class="gallery__item gallery__item--5">
               <img
-                src="img/gallery-2-small.jpg"
-                alt=""
+                srcset="
+                  img/compressed/gallery-5-small.webp  640w,
+                  img/compressed/gallery-5-large.webp 2400w
+                "
+                sizes="(max-width:64em) 23.6vw 
+                (max-width:37.5em)  40w"
+                src="img/compressed/gallery-5-large.webp"
+                alt="sheep unit"
                 class="gallery__item-img"
               />
               <h4 class="gallery__item-caption">a sheep</h4>
             </li>
             <li class="gallery__item gallery__item--6">
               <img
-                src="img/gallery-8-small.jpg"
-                alt=""
+                srcset="
+                  img/compressed/gallery-4-small.webp  640w,
+                  img/compressed/gallery-4-large.webp 2400w
+                "
+                sizes="(max-width:64em) 32.1vw 
+                    (max-width:37.5em)  70w"
+                src="img/compressed/gallery-4-large.webp "
+                alt="cup with crotchet hooks"
                 class="gallery__item-img"
               />
             </li>
             <li class="gallery__item gallery__item--7">
               <img
-                src="img/gallery-4-small.jpg"
-                alt=""
+                srcset="
+                  img/compressed/gallery-2-small.webp  640w,
+                  img/compressed/gallery-2-large.webp 2400w
+                "
+                sizes="(max-width:64em) 22.9vw 
+                    (max-width:37.5em)  43.8vw"
+                src="img/compressed/gallery-2-large.webp "
+                alt="crotcheting"
                 class="gallery__item-img"
               />
               <h4 class="gallery__item-caption">many stitches</h4>
             </li>
             <li class="gallery__item gallery__item--8">
               <img
-                src="img/gallery-7-small.jpg"
-                alt=""
+                srcset="
+                  img/compressed/gallery-3-small.webp  640w,
+                  img/compressed/gallery-3-large.webp 2400w
+                "
+                sizes="(max-width:64em) 24.8vw 
+                    (max-width:37.5em)  71.3w"
+                src="img/compressed/gallery-3-large.webp "
+                alt="wool spools"
                 class="gallery__item-img"
               />
+              <h4 class="gallery__item-caption">all colors</h4>
             </li>
             <li class="gallery__item gallery__item--9">
               <img
-                src="img/gallery-6-small.jpg"
-                alt=""
+                s
+                rcset="
+                  img/compressed/gallery-6-small.webp  640w,
+                  img/compressed/gallery-6-large.webp 2400w
+                "
+                sizes="(max-width:64em) 63.5vw 
+                    (max-width:37.5em)  86.7w"
+                src="img/compressed/gallery-6-large.webp "
+                alt="tag cards"
                 class="gallery__item-img"
               />
               <h4 class="gallery__item-caption">customized tags</h4>
@@ -94,13 +245,23 @@
           </ul>
         </div>
       </section>
-      <section class="section-shop" id="shop">
+      <section class="section-shop section--2" id="shop">
         <h1 class="heading-primary--section">Shop</h1>
         <div class="section-shop__container">
           <ul class="products">
             <li class="products__product products__product--1">
               <div class="products__product-img">
-                <img src="/img/beanie-yellow-no-bkg.png" alt="beanie" />
+                <img
+                  srcset="
+                    img/compressed/beanie-must-small.webp  640w,
+                    img/compressed/beanie-must-large.webp 2400w
+                  "
+                  sizes=" (max-width:64em) 27.3vw 
+                        (max-width:53.125em) 63.5w
+                        (max-width:37.5em) 63.3w"
+                  src="/img/compressed/beanie-must-large.webp"
+                  alt="beanie"
+                />
               </div>
               <div class="products__product-info">
                 <h2 class="products__product-info-name pd-name-color-1">
@@ -128,7 +289,17 @@
             </li>
             <li class="products__product products__product--2">
               <div class="products__product-img">
-                <img src="/img/scarf-large.png" alt="scarf" />
+                <img
+                  srcset="
+                    img/compressed/scarf-white-small.webp  640w,
+                    img/compressed/scarf-white-large.webp 2400w
+                  "
+                  sizes=" (max-width:64em) 25.5vw 
+                    (max-width:53.125em) 63.5w
+                    (max-width:37.5em) 62.8w"
+                  src="/img/compressed/scarf-white-large.webp"
+                  alt="scarf"
+                />
               </div>
               <div class="products__product-info">
                 <h2 class="products__product-info-name pd-name-color-2">
@@ -156,11 +327,21 @@
             </li>
             <li class="products__product products__product--3">
               <div class="products__product-img">
-                <img src="/img/sweater-large.png" alt="scarf" />
+                <img
+                  srcset="
+                    img/compressed/sweater-blue-small.webp  640w,
+                    img/compressed/sweater-blue-large.webp 2400w
+                  "
+                  sizes=" (max-width:64em) 25.5vw 
+                (max-width:53.125em) 63.5w
+                (max-width:37.5em) 62.8w"
+                  src="/img/compressed/sweater-blue-large.webp"
+                  alt="scarf"
+                />
               </div>
               <div class="products__product-info">
                 <h2 class="products__product-info-name pd-name-color-2">
-                  Turtleneck Sweater
+                  Sweater
                 </h2>
                 <h3 class="products__product-info-texture pd-stitch-color-2">
                   Dovetail stitch
@@ -185,7 +366,7 @@
           </ul>
         </div>
       </section>
-      <section class="section-reviews" id="reviews">
+      <section class="section-reviews section--3" id="reviews">
         <div class="section-reviews__heading">
           <h1 class="heading-primary--section">Reviews</h1>
         </div>
@@ -199,18 +380,16 @@
             </li>
             <li class="reviews__review reviews__review--3">
               <img
-                src="/img/avatar-girl-1-small.jpg"
-                alt="girl avatar"
-                class="reviews__review-img"
-              />
-
-              <img
                 src="/img/ssshape.svg"
                 alt="review shape bkg"
                 class="reviews__review-bkg"
                 fill="aqua"
               />
-
+              <img
+                src="/img/avatar-girl-1-small.jpg"
+                alt="girl avatar"
+                class="reviews__review-img"
+              />
               <div class="reviews__review-data">
                 <h3 class="reviews__review-data-name">Emma says</h3>
                 <h4 class="reviews__review-data-product">Product: beanie</h4>
@@ -219,46 +398,47 @@
             </li>
             <li class="reviews__review reviews__review--4">
               <img
-                src="/img/avatar-girl-1-small.jpg"
-                alt="girl avatar"
-                class="reviews__review-img"
+              src="/img/ssshape-cyan.svg"
+              alt="review shape bkg"
+              class="reviews__review-bkg"
+              fill="aqua"
               />
               <img
-                src="/img/ssshape-cyan.svg"
-                alt="review shape bkg"
-                class="reviews__review-bkg"
-                fill="aqua"
-              />
+                src="/img/rev-2-small.jpg"
+                alt="girl avatar"
+                class="reviews__review-img"
+              />            
               <div class="reviews__review-data">
-                <h3 class="reviews__review-data-name">Emma says</h3>
-                <h4 class="reviews__review-data-product">Product: beanie</h4>
-                <p class="reviews__review-data-para">"Great product"</p>
+                <h3 class="reviews__review-data-name">Lisa says</h3>
+                <h4 class="reviews__review-data-product">Product: sweater</h4>
+                <p class="reviews__review-data-para">"Fits nicely"</p>
               </div>
             </li>
             <li class="reviews__review reviews__review--5">
               <img
-                src="/img/avatar-girl-1-small.jpg"
+              src="/img/ssshape-green.svg"
+              alt="review shape bkg"
+              class="reviews__review-bkg"
+            />
+              <img
+                src="/img/rev-3-small.jpg"
                 alt="girl avatar"
                 class="reviews__review-img"
               />
-              <img
-                src="/img/ssshape-green.svg"
-                alt="review shape bkg"
-                class="reviews__review-bkg"
-                fill="aqua"
-              />
+           
               <div class="reviews__review-data">
-                <h3 class="reviews__review-data-name">Emma says</h3>
-                <h4 class="reviews__review-data-product">Product: beanie</h4>
-                <p class="reviews__review-data-para">"Great product"</p>
+                <h3 class="reviews__review-data-name">Sarah says</h3>
+                <h4 class="reviews__review-data-product">Product: scarf</h4>
+                <p class="reviews__review-data-para">"Nice and warm"</p>
               </div>
             </li>
+            </li>
           </ul>
-        </div>
-        <div class="section-reviews__form">
-          <h3 class="heading-tertiary">Tell us yours</h3>
-          <form class="form">
-            <label for="description">Describe your experience</label>
+          <form action="" method="dialog" class="form">
+            <h3 class="heading-tertiary form__heading">Tell us yours!</h3>
+            <label for="description" class="form__textarea-label"
+              >Describe your experience</label
+            >
             <textarea id="description" name="description"></textarea>
 
             <div class="form__options">
@@ -272,43 +452,52 @@
               <label for="sweater">Sweater <span></span></label>
             </div>
 
-            <button type="submit" class="btn">send</button>
+            <button class="btn">send</button>
           </form>
         </div>
       </section>
-      <section class="section-contacts" id="contacts">
+      <section class="section-contacts section--4" id="contacts">
         <h1 class="heading-primary--section">Contacts</h1>
         <div class="section-contacts__container">
           <ul class="contacts">
             <li class="contacts__contact contacts__contact--1">
-              <svg class="contacts__contact-icon icon">
+              <svg class="contacts__contact-icon icon contact-link">
                 <use xlink:href="img/sprite.svg#icon-instagram"></use>
               </svg>
             </li>
             <li class="contacts__contact contacts__contact--2">
-              <a class="contact-link">Instagram</a>
+              <h4>Instagram</h4>
             </li>
             <li class="contacts__contact contacts__contact--3">
-              <svg class="contacts__contact-icon icon">
+              <svg class="contacts__contact-icon icon contact-link">
                 <use xlink:href="img/sprite.svg#icon-linkedin"></use>
               </svg>
             </li>
             <li class="contacts__contact contacts__contact--4">
-              <a class="contact-link">LinkedIn</a>
+              <h4>LinkedIn</h4>
             </li>
             <li class="contacts__contact contacts__contact--5">
-              <svg class="contacts__contact-icon icon">
+              <svg class="contacts__contact-icon icon contact-link">
                 <use xlink:href="img/sprite.svg#icon-facebook"></use>
               </svg>
             </li>
             <li class="contacts__contact contacts__contact--6">
-              <a class="contact-link">Facebook</a>
+              <h4>Facebook</h4>
             </li>
           </ul>
           <div class="visit">
             <h4 class="visit__slogan">Come visit us at our local shop!</h4>
             <figure class="visit__image">
-              <img src="img/shop-large.jpg" alt="shop image" />
+              <img
+                srcset="
+                  img/compressed/shop-small.webp  640w,
+                  img/compressed/shop-large.webp 2400w
+                "
+                sizes=" (max-width:87.5em) 38.3vw 
+                (max-width:37.5em) 47.6vw"
+                src="/img/compressed/shop-large.webp"
+                alt="shop image"
+              />
             </figure>
             <div class="visit__location">
               <svg class="visit__location-icon">
@@ -321,13 +510,6 @@
           </div>
         </div>
       </section>
-      <div class="basket">
-        <button class="basket__btn">
-          <svg class="basket__btn-icon">
-            <use xlink:href="img/sprite.svg#icon-basket" class="icon"></use>
-          </svg>
-        </button>
-      </div>
     </main>
     <footer class="footer">
       <div class="info">
