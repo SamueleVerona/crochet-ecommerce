@@ -9,12 +9,12 @@
   </head>
   <body>
     <div class="checkout">
-      <div class="checkout__container">
-        <div class="checkout__basket">
-          <h2 class="checkout__basket-heading--secondary heading-secondary">
+      <div class="checkout__box">
+        <div class="checkout__overview">
+          <h2 class="checkout__overview-heading--secondary heading--secondary">
             In your basket
           </h2>
-          <ul class="products checkout__basket-list">
+          <ul class="products checkout__overview-list">
             <li class="products__product products__product--1">
               <div class="products__product-img">
                 <img
@@ -22,7 +22,7 @@
                   alt="beanie"
                 />
               </div>
-              <div class="products__product-info">
+              <div class="products__product-metabox">
                 <h2><span>1</span> X</h2>
               </div>
             </li>
@@ -30,7 +30,7 @@
               <div class="products__product-img">
                 <img src="/img/compressed/scarf-white-small.webp" alt="scarf" />
               </div>
-              <div class="products__product-info">
+              <div class="products__product-metabox">
                 <h2><span>1</span> X</h2>
               </div>
             </li>
@@ -41,7 +41,7 @@
                   alt="sweater"
                 />
               </div>
-              <div class="products__product-info">
+              <div class="products__product-metabox">
                 <h2><span>1</span> X</h2>
               </div>
             </li>
@@ -49,7 +49,7 @@
         </div>
 
         <div class="checkout__invoice">
-          <h2 class="heading-secondary checkout__invoice-heading--secondary">
+          <h2 class="heading--secondary checkout__invoice-heading--secondary">
             CHECKOUT
           </h2>
           <div class="checkout__invoice-summary">
@@ -75,16 +75,16 @@
             <form action="" method="dialog" class="form">
               <div class="form__options">
                 <input type="radio" id="paypal" name="pay-method" />
-                <label for="paypal">PayPal <span></span> </label>
+                <label for="paypal" class="label safari-interactive-default">PayPal <span></span> </label>
 
                 <input type="radio" id="card" name="pay-method" />
-                <label for="card">Card <span></span></label>
+                <label for="card" class="label safari-interactive-default">Card <span></span></label>
 
                 <input type="radio" id="appleplay" name="pay-method" />
-                <label for="appleplay">Apple Pay <span></span></label>
+                <label for="appleplay" class="label safari-interactive-default">Apple Pay <span></span></label>
               </div>
 
-              <button class="btn checkout__invoice-cta">buy</button>
+              <button class="btn checkout__invoice-cta safari-interactive-default">buy</button>
             </form>
           </div>
         </div>
@@ -92,12 +92,12 @@
       <div class="checkout__bkg"></div>
     </div>
     <div class="basket">
-      <button class="basket__btn">
-        <svg class="basket__btn-icon">
+      <button class="basket__btn safari-interactive-default">
+        <svg class="basket__icon">
           <use xlink:href="img/sprite.svg#icon-basket" class="icon"></use>
         </svg>
         <span class="basket__btn-idx"></span>
-        <div class="store-item" inert></div>
+        <div class="dummy-product" inert></div>
       </button>
     </div>
     <section class="section-hero">
@@ -114,7 +114,6 @@
               id="arc"
             ></path>
           </defs>
-
           <text dy="-100" text-anchor="middle">
             <textPath startOffset="50%" href="#arc">CROCHET</textPath>
           </text>
@@ -124,7 +123,7 @@
         <img src="img/logo-red-short.png" alt="site logo" />
       </div>
       <div class="section-hero__subtitle">
-        <h2 class="heading-secondary">HANDMANDE GARMENTS</h2>
+        <h2 class="heading--secondary">HANDMANDE GARMENTS</h2>
       </div>
     </section>
     <main>
@@ -145,7 +144,7 @@
         </ul>
       </nav>
       <section class="section-statement section--1" id="statement">
-        <div class="section-statement__container">
+        <div class="section-statement__box">
           <ul class="gallery">
             <li class="gallery__item gallery__item--1">
               <h2>Ethically sourced</h2>
@@ -246,8 +245,8 @@
         </div>
       </section>
       <section class="section-shop section--2" id="shop">
-        <h1 class="heading-primary--section">Shop</h1>
-        <div class="section-shop__container">
+        <h1 class="heading--primary-section">Shop</h1>
+        <div class="section-shop__box">
           <ul class="products">
             <li class="products__product products__product--1">
               <div class="products__product-img">
@@ -263,28 +262,28 @@
                   alt="beanie"
                 />
               </div>
-              <div class="products__product-info">
-                <h2 class="products__product-info-name pd-name-color-1">
+              <div class="products__product-metabox">
+                <h2 class="products__product-name pd-name-color--1">
                   Classic Beanie
                 </h2>
-                <h3 class="products__product-info-texture pd-stitch-color-1">
+                <h3 class="products__product-texture pd-stitch-color-1">
                   Cross stitch
                 </h3>
-                <h4 class="products__product-info-size">
-                  Size: <span class="pd-size-color-1">All</span>
+                <h4 class="products__product-size">
+                  Sizes: <span class="pd-size-color--1">All</span>
                 </h4>
-                <h4 class="products__product-info-qty">
-                  Quantity: <span> IO</span>
+                <h4 class="products__product-qty">
+                  Available: <span> IO</span>
                 </h4>
-                <h4 class="products__product-info-color">
-                  Colors: White-Pink, White-Mustard, White-Red, Mono
+                <h4 class="products__product-color">
+                  Colors: Mustard, White, Red
                 </h4>
               </div>
               <div class="products__product-buy">
-                <h2 class="products__product-buy-price pd-price-color-1">
+                <h2 class="products__product-buy-price pd-price-color--1">
                   <span>oε</span>$
                 </h2>
-                <button class="products__product-buy-cta btn">BUY</button>
+                <button class="products__product-buy-cta btn safari-interactive-default">BUY</button>
               </div>
             </li>
             <li class="products__product products__product--2">
@@ -301,28 +300,28 @@
                   alt="scarf"
                 />
               </div>
-              <div class="products__product-info">
-                <h2 class="products__product-info-name pd-name-color-2">
+              <div class="products__product-metabox">
+                <h2 class="products__product-name pd-name-color--2">
                   Scarf
                 </h2>
-                <h3 class="products__product-info-texture pd-stitch-color-2">
+                <h3 class="products__product-texture pd-stitch-color-2">
                   Dovetail stitch
                 </h3>
-                <h4 class="products__product-info-size">
-                  Size: <span class="pd-size-color-2">All</span>
+                <h4 class="products__product-size">
+                  Sizes: <span class="pd-size-color--2">All</span>
                 </h4>
-                <h4 class="products__product-info-qty">
-                  Quantity: <span> IO</span>
+                <h4 class="products__product-qty">
+                  Available: <span> IO</span>
                 </h4>
-                <h4 class="products__product-info-color">
-                  Colors: White-Pink, White-Mustard, White-Red, Mono
+                <h4 class="products__product-color">
+                  Colors: White, Pink, Red
                 </h4>
               </div>
               <div class="products__product-buy">
-                <h2 class="products__product-buy-price pd-price-color-3">
+                <h2 class="products__product-buy-price pd-price-color--3">
                   <span>Os</span>$
                 </h2>
-                <button class="products__product-buy-cta btn">BUY</button>
+                <button class="products__product-buy-cta btn safari-interactive-default">BUY</button>
               </div>
             </li>
             <li class="products__product products__product--3">
@@ -339,28 +338,28 @@
                   alt="scarf"
                 />
               </div>
-              <div class="products__product-info">
-                <h2 class="products__product-info-name pd-name-color-2">
+              <div class="products__product-metabox">
+                <h2 class="products__product-name pd-name-color--2">
                   Sweater
                 </h2>
-                <h3 class="products__product-info-texture pd-stitch-color-2">
+                <h3 class="products__product-texture pd-stitch-color-2">
                   Dovetail stitch
                 </h3>
-                <h4 class="products__product-info-size">
-                  Size: <span class="pd-size-color-2">All</span>
+                <h4 class="products__product-size">
+                  Sizes: <span class="pd-size-color--2">All</span>
                 </h4>
-                <h4 class="products__product-info-qty">
-                  Quantity: <span> IO</span>
+                <h4 class="products__product-qty">
+                  Available: <span> IO</span>
                 </h4>
-                <h4 class="products__product-info-color">
-                  Colors: White-Pink, White-Mustard, White-Red, Mono
+                <h4 class="products__product-color">
+                  Colors: Lilac, Salvia, Cyan
                 </h4>
               </div>
               <div class="products__product-buy">
-                <h2 class="products__product-buy-price pd-price-color-2">
+                <h2 class="products__product-buy-price pd-price-color--2">
                   <span>OOI</span>$
                 </h2>
-                <button class="products__product-buy-cta btn">BUY</button>
+                <button class="products__product-buy-cta btn safari-interactive-default">BUY</button>
               </div>
             </li>
           </ul>
@@ -368,9 +367,9 @@
       </section>
       <section class="section-reviews section--3" id="reviews">
         <div class="section-reviews__heading">
-          <h1 class="heading-primary--section">Reviews</h1>
+          <h1 class="heading--primary-section">Reviews</h1>
         </div>
-        <div class="section-reviews__container">
+        <div class="section-reviews__box">
           <ul class="reviews">
             <li class="reviews__review reviews__review--1">
               <h2>So far,</h2>
@@ -388,12 +387,12 @@
               <img
                 src="/img/avatar-girl-1-small.jpg"
                 alt="girl avatar"
-                class="reviews__review-img"
+                class="reviews__review-avatar"
               />
-              <div class="reviews__review-data">
-                <h3 class="reviews__review-data-name">Emma says</h3>
-                <h4 class="reviews__review-data-product">Product: beanie</h4>
-                <p class="reviews__review-data-para">"Great product"</p>
+              <div class="reviews__review-metabox">
+                <h3 class="reviews__review-author">Emma says</h3>
+                <h4 class="reviews__review-product">Product: beanie</h4>
+                <p class="reviews__review-description">"Great product"</p>
               </div>
             </li>
             <li class="reviews__review reviews__review--4">
@@ -401,17 +400,16 @@
               src="/img/ssshape-cyan.svg"
               alt="review shape bkg"
               class="reviews__review-bkg"
-              fill="aqua"
               />
               <img
                 src="/img/rev-2-small.jpg"
                 alt="girl avatar"
-                class="reviews__review-img"
+                class="reviews__review-avatar"
               />            
-              <div class="reviews__review-data">
-                <h3 class="reviews__review-data-name">Lisa says</h3>
-                <h4 class="reviews__review-data-product">Product: sweater</h4>
-                <p class="reviews__review-data-para">"Fits nicely"</p>
+              <div class="reviews__review-metabox">
+                <h3 class="reviews__review-author">Lisa says</h3>
+                <h4 class="reviews__review-product">Product: sweater</h4>
+                <p class="reviews__review-description">"Fits nicely"</p>
               </div>
             </li>
             <li class="reviews__review reviews__review--5">
@@ -423,42 +421,46 @@
               <img
                 src="/img/rev-3-small.jpg"
                 alt="girl avatar"
-                class="reviews__review-img"
+                class="reviews__review-avatar"
               />
            
-              <div class="reviews__review-data">
-                <h3 class="reviews__review-data-name">Sarah says</h3>
-                <h4 class="reviews__review-data-product">Product: scarf</h4>
-                <p class="reviews__review-data-para">"Nice and warm"</p>
+              <div class="reviews__review-metabox">
+                <h3 class="reviews__review-author">Sarah says</h3>
+                <h4 class="reviews__review-product">Product: scarf</h4>
+                <p class="reviews__review-description">"Nice and warm"</p>
               </div>
             </li>
             </li>
           </ul>
           <form action="" method="dialog" class="form">
-            <h3 class="heading-tertiary form__heading">Tell us yours!</h3>
-            <label for="description" class="form__textarea-label"
-              >Describe your experience</label
-            >
-            <textarea id="description" name="description"></textarea>
-
-            <div class="form__options">
-              <input type="radio" id="beanie" name="product" />
-              <label for="beanie">Beanie <span></span></label>
-
-              <input type="radio" id="scarf" name="product" />
-              <label for="scarf">Scarf <span></span></label>
-
-              <input type="radio" id="sweater" name="product" />
-              <label for="sweater">Sweater <span></span></label>
+            <h3 class="heading--tertiary form__heading">Tell us yours!</h3>
+            <div class="form__box">
+              <div class="form__textbox">
+                <label for="description" class="form__textarea-label"
+                  >Describe your experience</label
+                >
+                <textarea id="description" name="description"></textarea>
+              </div>
+              <div class="form__submitbox">
+                <div class="form__options">
+                  <input type="radio" id="beanie" name="product" />
+                  <label for="beanie" class="label safari-interactive-default">Beanie <span></span></label>
+    
+                  <input type="radio" id="scarf" name="product" />
+                  <label for="scarf"class="label safari-interactive-default">Scarf <span></span></label>
+    
+                  <input type="radio" id="sweater" name="product" />
+                  <label for="sweater" class="label safari-interactive-default">Sweater <span></span></label>
+                </div>
+                <button class="btn" class="safari-interactive-default">send</button>
+              </div>
             </div>
-
-            <button class="btn">send</button>
           </form>
         </div>
       </section>
       <section class="section-contacts section--4" id="contacts">
-        <h1 class="heading-primary--section">Contacts</h1>
-        <div class="section-contacts__container">
+        <h1 class="heading--primary-section">Contacts</h1>
+        <div class="section-contacts__box">
           <ul class="contacts">
             <li class="contacts__contact contacts__contact--1">
               <svg class="contacts__contact-icon icon contact-link">
@@ -512,29 +514,29 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="info">
-        <ul class="info-resources">
-          <li class="info-resources__resource">
+      <div class="footer__linkbox">
+        <ul class="resources">
+          <li class="resources__resource">
             <a class="page-link">T.o.S.</a>
           </li>
-          <li class="info-resources__resource">
+          <li class="resources__resource">
             <a class="page-link">DMCA</a>
           </li>
-          <li class="info-resources__resource">
+          <li class="resources__resource">
             <a class="page-link">Legal</a>
           </li>
-          <li class="info-resources__resource">
+          <li class="resources__resource">
             <a class="page-link">Customer support</a>
           </li>
-          <li class="info-resources__resource">
-            <div class="info-resources__resource-pay">
+          <li class="resources__resource">
+            <div class="resources__resource-pay">
               <span>Accepted payments:</span>
               <p>PayPal, Credit/Debit Card, Apple Pay</p>
             </div>
           </li>
         </ul>
       </div>
-      <div class="copy">
+      <div class="footer__copyright">
         <p>
           This website is for demo purposes only. Feel free to copy it or take
           insipration. <br /><br />

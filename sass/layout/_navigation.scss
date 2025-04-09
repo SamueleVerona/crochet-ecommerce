@@ -19,12 +19,10 @@
   @include screen(small) {
     transform: translate(-50%, -150%);
     top: 9rem;
-
     left: 50%;
   }
 
   @include screen(smaller) {
-    // transform: translate(-50%, -170%);
     top: 9rem;
     left: 50%;
   }
@@ -54,14 +52,8 @@
           border: none;
           outline: none;
         }
-
-        &:focus {
-          text-decoration: underline;
-        }
       }
-      // @include screen(mid-port) {
-      //   font-size: 3rem;
-      // }
+
       @include screen(smallest) {
         margin: 0rem 0.5rem;
         font-size: 2.5rem;

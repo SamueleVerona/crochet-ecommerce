@@ -1,7 +1,6 @@
 .form {
   position: relative;
   display: inline-flex;
-  // align-self: flex-start;
   flex: 1;
   height: 100%;
 
@@ -25,15 +24,24 @@
     }
   }
 
-  &__textarea-label {
+  &__box {
     width: 100%;
-  }
+    display: flex;
+    flex-direction: column;
 
-  label {
+    @include screen(land-mid-land) {
+      flex-direction: row;
+    }
+  }
+  .label {
     display: flex;
     flex: 1;
     width: 80%;
-    font-size: 4rem;
+
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2.2rem;
 
     span {
       display: inline-block;
@@ -45,23 +53,19 @@
       margin-top: 0.5rem;
     }
   }
-
-  &__options {
+  &__textbox {
+    flex: 1;
     display: flex;
-    width: 50%;
-    margin: 2rem auto;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
-    justify-self: center;
-    align-self: center;
+  }
 
-    label {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      font-size: 2.2rem;
-    }
+  &__textarea-label {
+    width: 80%;
+    white-space-collapse: break-spaces;
+    line-clamp: 2;
+    font-size: 3rem;
   }
 
   textarea {
@@ -77,6 +81,32 @@
     &:focus {
       border: solid 3px $theme-primary-wine;
       outline: none;
+    }
+  }
+
+  &__submitbox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__options {
+    display: flex;
+    width: 60%;
+    margin: 2rem auto;
+    align-items: center;
+    justify-content: space-evenly;
+    justify-self: center;
+    align-self: center;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      font-size: 2.2rem;
     }
   }
 
@@ -114,13 +144,17 @@
 
   @include screen(mid-land) {
     height: auto;
-
     margin-top: 1rem;
     margin-bottom: 0rem;
   }
 
-  @include screen(land-mid-port) {
-    grid-column-start: 2;
-    grid-row: 2;
+  @include screen(land-mid-land) {
+    margin-top: 50px;
+    padding: 2rem;
+    max-height: 90vh;
+  }
+
+  @include screen(land-small) {
+    flex: 0;
   }
 }

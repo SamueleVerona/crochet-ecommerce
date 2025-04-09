@@ -1,4 +1,4 @@
-.heading-primary {
+.heading--primary {
   display: flex;
   margin-bottom: 2rem;
   font-size: 11rem;
@@ -11,13 +11,17 @@
   }
 }
 
-.heading-primary--section {
+.heading--primary-section {
   font-family: "Romantic";
   font-size: 8rem;
   color: $theme-primary-white;
+
+  @include screen(land-mid-land) {
+    font-size: 7rem;
+  }
 }
 
-.heading-secondary {
+.heading--secondary {
   margin-top: 2rem;
   font-size: 5vh;
   color: $theme-primary-white;
@@ -37,13 +41,13 @@
     font-size: 3vh;
   }
 }
-.heading-tertiary {
+.heading--tertiary {
   font-family: "Romantic";
   font-size: 6rem;
   color: $theme-primary-black;
 }
 
-.heading-quaternary {
+.heading--quaternary {
   font-size: 2.5rem;
   color: $theme-primary-black;
 
@@ -72,6 +76,7 @@
     text-shadow: 0rem 0.5rem 3rem white;
   }
 }
+
 .contact-link {
   text-decoration: none;
   cursor: pointer;
@@ -84,34 +89,37 @@
   }
 }
 
-.pd-name-color-1 {
+.pd-name-color--1 {
   color: $theme-primary-wine;
 }
 
-.pd-name-color-2 {
+.pd-name-color--2 {
   color: $theme-primary-black;
 }
 
-.pd-stitch-color-1 {
+.pd-stitch-color--1 {
   color: $theme-primary-green;
 }
 
-.pd-stitch-color-2 {
+.pd-stitch-color--2 {
   color: $theme-primary-burgundy;
 }
-.pd-size-color-1 {
+.pd-size-color--1 {
   color: $theme-primary-orange;
 }
 
-.pd-size-color-2 {
+.pd-size-color--2 {
   color: $theme-primary-red;
 }
-.pd-price-color-1 {
+
+.pd-price-color--1 {
   color: $theme-primary-cyan-bright;
 }
-.pd-price-color-2 {
+
+.pd-price-color--2 {
   color: $theme-primary-blue;
 }
-.pd-price-color-3 {
+
+.pd-price-color--3 {
   color: $theme-primary-burgundy;
 }

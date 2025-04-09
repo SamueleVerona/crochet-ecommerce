@@ -49,7 +49,7 @@
 
   @include screen(small) {
     grid-template-rows: repeat(6, 15rem);
-    row-gap: 0;
+    row-gap: 0.3rem;
 
     grid-template-areas:
       "text1"
@@ -71,6 +71,10 @@
       "img3"
       "text3 "
       "img5 ";
+  }
+
+  @include screen(land-small) {
+    grid-template-rows: repeat(5, minmax(10vh, 20vh));
   }
 
   &__item {
@@ -126,6 +130,7 @@
       @include screen(land-mid-land) {
         justify-content: center;
         font-size: 3rem;
+        white-space: nowrap;
       }
     }
     &--2 {
@@ -144,7 +149,9 @@
       }
       @include screen(land-mid-land) {
         justify-content: center;
-        font-size: 2.5rem;
+        font-size: 2rem;
+        line-clamp: 1;
+        white-space: nowrap;
       }
     }
     &--3 {
@@ -200,13 +207,33 @@
         backdrop-filter: brightness(80%);
       }
     }
+    @media screen and (max-device-width: 64rem) and (orientation: landscape),
+      screen and (hover: none) {
+      &:not(&--1, &--2, &--3):hover {
+        margin-right: 0rem;
+
+        .gallery__item-caption {
+          opacity: 0;
+          visibility: hidden;
+          backdrop-filter: none;
+        }
+      }
+    }
 
     @include screen(small) {
       overflow: hidden;
+      box-sizing: border-box;
+
       &--5,
       &--7,
       &--9 {
         display: none;
+      }
+
+      &--2,
+      &--3 {
+        border: 2px solid #d9d9d953;
+        background-color: #ececec;
       }
     }
   }

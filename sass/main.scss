@@ -1,4 +1,3 @@
-@import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
@@ -7,7 +6,6 @@
 @import "base/typography";
 @import "base/fonts";
 
-@import "components/logo";
 @import "components/btn";
 @import "components/gallery";
 @import "components/products";
@@ -15,10 +13,8 @@
 @import "components/form";
 @import "components/contacts";
 @import "components/visit";
-@import "components/store-item";
+@import "components/dummy-product";
 @import "components/icon";
-@import "components/info";
-@import "components/copy";
 @import "components/checkout";
 
 @import "layout/navigation";

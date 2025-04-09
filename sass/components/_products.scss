@@ -3,27 +3,13 @@
   z-index: 150;
   list-style: none;
   margin: 0 auto;
-
-  @include screen(land-mid-land) {
-    width: 100%;
-  }
-
-  @include screen(land-mid-port) {
-    width: 100%;
-  }
-  @include screen(mid-land) {
-    width: 100%;
-  }
-  @include screen(small) {
-    width: 100%;
-  }
+  width: 100%;
 
   .products__product {
     position: relative;
     display: grid;
     grid-template-columns: 30% 40% 30%;
     align-items: center;
-    min-height: 40rem;
     overflow: hidden;
 
     font-family: "Qurova";
@@ -118,8 +104,6 @@
       grid-template-columns: 30% 40% 30%;
     }
 
-    @include screen(small) {
-    }
     &-img {
       display: flex;
       justify-content: center;
@@ -132,21 +116,21 @@
         height: 100%;
         object-fit: cover;
         overflow: visible;
+
+        @include screen(mid-land) {
+          width: 80%;
+        }
+        @include screen(mid-port) {
+          width: 50%;
+        }
+
+        @include screen(land-small) {
+          width: 100%;
+        }
       }
 
       @include screen(large-std) {
         margin-left: 0;
-      }
-
-      @include screen(mid-land) {
-        img {
-          width: 80%;
-        }
-      }
-      @include screen(mid-port) {
-        img {
-          width: 50%;
-        }
       }
 
       @include screen(land-mid-land) {
@@ -156,8 +140,12 @@
       @include screen(land-mid-port) {
         margin-left: 3rem;
       }
+      @include screen(land-small) {
+        height: 60%;
+        margin-left: 0;
+      }
     }
-    &-info {
+    &-metabox {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -166,59 +154,14 @@
       & > :not(:nth-child(1), :nth-child(2)) {
         margin: 0.5rem 0rem;
       }
-      &-name {
-        grid-column: info-start/info-end;
-        margin-top: 3rem;
-        font-size: 6rem;
-        order: -5;
-        text-wrap: nowrap;
 
-        @include screen(mid-land) {
-          text-wrap: wrap;
-        }
-
-        @include screen(mid-port) {
-          margin-top: 0;
-        }
-        @include screen(land-mid-land) {
-          font-size: 5rem;
-        }
-      }
-      &-texture {
-        margin-bottom: 5rem;
-        font-size: 4rem;
-        border-bottom: solid 2px $theme-primary-pink;
-
-        @include screen(mid-land) {
-          margin-bottom: 2rem;
-        }
-
-        @include screen(land-mid-land) {
-          font-size: 3rem;
-        }
-      }
-      &-size {
-        font-size: 2rem;
-      }
-      &-qty {
-        font-size: 2rem;
-        span {
-          color: $theme-primary-cyan;
-        }
-      }
-      &-color {
-        grid-column: info-start/info-end;
-        font-size: 2rem;
-      }
-      // @include screen(mid-land) {
-      //   margin-left: 0;
-      // }
       @include screen(mid-land) {
         padding: 0rem 3rem;
         padding-left: 0;
         margin: 0rem 3rem;
         margin-left: 0;
       }
+
       @include screen(mid-port) {
         padding: 0rem 3rem;
         margin: 0rem 3rem;
@@ -227,8 +170,60 @@
       @include screen(land-mid-port) {
         padding: 3rem;
       }
-    }
 
+      @include screen(land-small) {
+        margin-left: 3rem;
+        padding: 0;
+      }
+    }
+    &-name {
+      grid-column: info-start/info-end;
+      margin-top: 3rem;
+      font-size: 6rem;
+      order: -5;
+      text-wrap: nowrap;
+
+      @include screen(mid-land) {
+        text-wrap: wrap;
+      }
+
+      @include screen(mid-port) {
+        margin-top: 0;
+      }
+      @include screen(land-mid-land) {
+        font-size: 5rem;
+      }
+    }
+    &-texture {
+      margin-bottom: 5rem;
+      font-size: 4rem;
+      border-bottom: solid 2px $theme-primary-pink;
+
+      @include screen(mid-land) {
+        margin-bottom: 2rem;
+      }
+
+      @include screen(land-mid-land) {
+        font-size: 3rem;
+      }
+    }
+    &-size {
+      font-size: 2rem;
+    }
+    &-qty {
+      font-size: 2rem;
+      span {
+        color: $theme-primary-cyan;
+      }
+    }
+    &-color {
+      grid-column: info-start/info-end;
+      font-size: 2rem;
+
+      @include screen(land-small) {
+        padding-bottom: 3rem;
+      }
+    }
     &-buy {
       display: flex;
       flex-direction: column;
@@ -249,6 +244,9 @@
           @include screen(mid-land) {
             font-size: 8rem;
           }
+          @include screen(land-small) {
+            font-size: 6rem;
+          }
         }
 
         @include screen(mid-land) {
@@ -257,6 +255,9 @@
         }
         @include screen(small) {
           margin-top: 1rem;
+        }
+        @include screen(land-small) {
+          font-size: 6rem;
         }
       }
 
@@ -268,7 +269,8 @@
         justify-content: center;
         transition: all 0.1s ease;
 
-        &:active {
+        &:active,
+        &-pressed {
           scale: 0.9;
         }
 

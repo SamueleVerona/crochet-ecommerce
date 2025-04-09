@@ -30,7 +30,6 @@
 
   @include screen(mid-port) {
     transition-delay: 0.4s;
-
     transform: translateY(0);
   }
 }
@@ -42,8 +41,11 @@
 
   @include screen(mid-port) {
     transition-delay: 0s;
-
-    // transform: rotateX(45deg);
     transform: translateY(-100%);
   }
+}
+
+.safari-interactive-default {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }

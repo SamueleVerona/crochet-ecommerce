@@ -56,45 +56,49 @@
     }
   }
 
+  //2000px
   @if $breakpoint == land-largest {
     @media screen and (max-width: 125em) and (orientation: landscape) {
       @content;
     }
   }
-
+  //1500px
   @if $breakpoint == land-larger {
     @media screen and (max-width: 93.75em) and (orientation: landscape) {
       @content;
     }
   }
-
+  //1400px
   @if $breakpoint == land-large-big {
     @media screen and (max-width: 87.5em) and (orientation: landscape) {
       @content;
     }
   }
+  //1024px
   @if $breakpoint == land-large-std {
     @media screen and (max-device-width: 64em) and (orientation: landscape) {
       @content;
     }
   }
+  //850px
   @if $breakpoint == land-mid-land {
     @media screen and (max-device-width: 53.125em) and (orientation: landscape) {
       @content;
     }
   }
-
+  //650px
   @if $breakpoint == land-mid-port {
     @media screen and (max-width: 40.625em) and (orientation: landscape) {
       @content;
     }
   }
+  //600px
   @if $breakpoint == land-small {
     @media screen and (max-device-width: 37.5em) and (orientation: landscape) {
       @content;
     }
   }
-
+  //500px
   @if $breakpoint == land-smaller {
     @media screen and (max-device-width: 31.25em) and (orientation: landscape) {
       @content;

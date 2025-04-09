@@ -4,12 +4,11 @@ const cardCta = document.querySelectorAll(".products__product-buy-cta");
 const basketBtn = document.querySelector(".basket__btn");
 const basketIdx = document.querySelector(".basket__btn-idx");
 const basketDiv = document.querySelector(".basket");
-const storeItem = document.querySelector(".store-item");
+const dummyProduct = document.querySelector(".dummy-product");
 const checkout = document.querySelector(".checkout");
 const checkoutInv = document.querySelector(".checkout__invoice");
-const checkoutBask = document.querySelector(".checkout__basket");
+const checkoutOverview = document.querySelector(".checkout__overview");
 const checkoutBkg = document.querySelector(".checkout__bkg");
-
 const navList = document.querySelector(".navbar__list");
 
 let basketItems = 0;
@@ -25,6 +24,10 @@ const itemBackgrounds = {
 
 cardCta.forEach((btn) =>
   btn.addEventListener("click", (e) => {
+    btn.classList.add("btn-pressed");
+    setTimeout(() => {
+      btn.classList.remove("btn-pressed");
+    }, 150);
     basketItems++;
     basketIdx.textContent = `+${basketItems}`;
 
@@ -38,19 +41,19 @@ cardCta.forEach((btn) =>
     const isSecondPd = pdItem.classList.contains("products__product--2");
     const isThirdPd = pdItem.classList.contains("products__product--3");
 
-    if (isFirstPd) storeItem.style.backgroundImage = itemBackgrounds.item1;
-    if (isSecondPd) storeItem.style.backgroundImage = itemBackgrounds.item2;
-    if (isThirdPd) storeItem.style.backgroundImage = itemBackgrounds.item3;
+    if (isFirstPd) dummyProduct.style.backgroundImage = itemBackgrounds.item1;
+    if (isSecondPd) dummyProduct.style.backgroundImage = itemBackgrounds.item2;
+    if (isThirdPd) dummyProduct.style.backgroundImage = itemBackgrounds.item3;
 
-    storeItem.classList.add("store-item--animation");
+    dummyProduct.classList.add("dummy-product--animation");
 
     basketBtn.style.animation = "pulse .5s forwards 0.9s";
     setTimeout(() => {
-      storeItem.classList.remove("store-item--animation");
+      dummyProduct.classList.remove("dummy-product--animation");
     }, 1000);
 
     setTimeout(() => {
-      storeItem.classList.remove("store-item--animation");
+      dummyProduct.classList.remove("dummy-product--animation");
 
       basketBtn.style.animation = "";
     }, 1500);
@@ -68,8 +71,8 @@ basketBtn.addEventListener("click", () => {
     checkoutInv.classList.remove("checkout__inv-out");
     checkoutInv.classList.add("checkout__inv-in");
 
-    checkoutBask.classList.remove("checkout__bask-out");
-    checkoutBask.classList.add("checkout__bask-in");
+    checkoutOverview.classList.remove("checkout__bask-out");
+    checkoutOverview.classList.add("checkout__bask-in");
 
     checkoutBkg.classList.remove("checkout__bkg-out");
     checkoutBkg.classList.add("checkout__bkg-in");
@@ -79,8 +82,8 @@ basketBtn.addEventListener("click", () => {
     checkoutInv.classList.remove("checkout__inv-in");
     checkoutInv.classList.add("checkout__inv-out");
 
-    checkoutBask.classList.remove("checkout__bask-in");
-    checkoutBask.classList.add("checkout__bask-out");
+    checkoutOverview.classList.remove("checkout__bask-in");
+    checkoutOverview.classList.add("checkout__bask-out");
 
     checkoutBkg.classList.remove("checkout__bkg-in");
     checkoutBkg.classList.add("checkout__bkg-out");

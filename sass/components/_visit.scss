@@ -6,13 +6,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   border-radius: 5px;
 
   &__slogan {
     font-size: 5rem;
     color: $theme-primary-wine;
     text-align: center;
+
+    @include screen(land-mid-land) {
+      font-size: 3.5rem;
+      white-space: nowrap;
+    }
   }
 
   &__image {
@@ -34,6 +38,10 @@
 
     @include screen(mid-land) {
       width: calc(95% + 2rem);
+    }
+
+    @include screen(land-mid-land) {
+      width: 50%;
     }
   }
 

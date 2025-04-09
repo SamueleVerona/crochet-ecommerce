@@ -26,6 +26,12 @@
     margin-top: 2rem;
   }
 
+  @include screen(land-mid-land) {
+    margin-top: 1rem;
+
+    grid-template-rows: repeat(3, minmax(20%, 10rem));
+  }
+
   &__contact {
     display: flex;
     font-size: 4rem;
